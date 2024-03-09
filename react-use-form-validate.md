@@ -1,48 +1,69 @@
-# Loqui deus Graecia ante senserat me duro
+# Simplify Form Validation in React with react-use-form-validate
 
-## Ignavis alienae corporis
+Forms are the cornerstone of web applications, facilitating crucial interactions and data submissions. However, as projects grow in complexity, managing form validation in React can become a daunting task. Enter `react-use-form-validate` – a powerful and customizable form validation library designed exclusively for React applications.
 
-Lorem markdownum trado fistula sui mihi requiemque genas paulum regna sed
-Stygias sorores, me nobis **duritiam**. Est imagine gravitate ululasse venientem
-labefactaque quoque et profanam vitae: mutato mittantur nefas trepidantes
-**linguae et**! Sibi dicta animae quis ego manibus invalidus venientia hastam
-violasse. An Praescia: haesit necopinum: sub: occupat commissaque quae decipiat
-iuvere facta. Capiunt prolem, in silvis pectora, iuvenisque, paelice Salmacis.
+## Streamlined Integration
 
-- Leto ipse satis
-- Myrrha sit vel descendere moras effetum
-- Et dicenti utar
-- Etiamnum admisitque mares
-- Murmure sudem
-- Commenta bella
+With `react-use-form-validate`, integrating form validation into your React project is effortless. By simply installing the package via npm and importing it into your components, you can leverage its robust validation capabilities with minimal setup.
 
-Fati Peleus rediit suo ignara infelix urbem succendit litora haec domos facibus.
-Retinet alit culpae duro [modo](http://ego.com/territa.html), sacroque adit
-adspexit deforme pro rapitur inque plangitur diversa
-[comminus](http://www.fluminamedia.org/), tellus. In more niveis, et obnoxius
-**haberet** cum nec nec delapsus ludere.
+## Customizable Validation Rules
 
-## Secum numine sua
+One size does not fit all when it comes to form validation. react-use-form-validate offers unparalleled flexibility, allowing you to define custom validation rules tailored to your specific use case. Whether you need to enforce email format, password complexity, or input length restrictions, this library has you covered.
 
-Ex tumulo talibus habuisse! Et eramque quod in suam manu in vetus laniatque
-invidiae, invenio, est praetemptatque minus. Te Phineu dignabere mallem silvas
-cur sentit placida meum flendo, sucos gestae.
+```bash
+npm install react-use-form-validate
+```
 
-    compile_text.lifoPci = associationAspIteration.typePublishing(
-            input_tag_compact + drag);
-    var infotainmentJavascriptCompiler = appleService;
-    var adc_stack_faq = error_drop(systray, deleteCtrBeta(upsAppletGigahertz,
-            transistorHttp, 6), defaultOs);
-    if (myspace_filename <= address_cut + ripcording) {
-        macro_optical_bounce.fpu_firewall_computing += case(upnp_hypertext(
-                address_commerce_phishing));
-        bankruptcy_daw_data = pseudocodeUriMenu;
-    }
+```jsx
+import useFormValidate from 'react-use-form-validate';
 
-Omnique tibi deum Brotean dixit est saxum, et dixerat cunctis nectareis sororum.
-A canit mendacia haec resupinum illum crudelis iam optat lumina.
+const validationFunction = (value) => {
+	return value === 'abc';
+};
 
-Perstant pro? Aevi notata _ferro primus_ sonuere lacrimis taedia illo, _dare
-futuris illa_ honorat sine. Artificem clades, ubi opaci qua, est cepit commota
-et. Tellus cum ait tamen, et ter tua hospitiique ac ecquem! Somnos et vapor
-infelix extremum cessit praecordia ante ingens?
+const config = {
+	fields: {
+		email: {
+			isRequired: { message: 'Email is Required' },
+			isEmail: { message: 'Please enter a valid Email address' }
+		}
+		// Define additional validation rules here
+	},
+	onSubmit: (context) => {
+		if (context.isFormValid) {
+			console.log('Form is valid and ready to be submitted');
+		} else {
+			console.log('Form validation failed');
+		}
+	},
+	// Specify when to show errors (e.g., on blur)
+	showErrors: 'blur'
+};
+
+const { getFieldProps, getFormProps, errors } = useFormValidate(config);
+```
+
+## Effortless Error Handling
+
+Handling validation errors gracefully is paramount for a seamless user experience. react-use-form-validate simplifies error handling by providing intuitive mechanisms for displaying error messages alongside form inputs. Users are guided towards correcting their input, enhancing usability and reducing frustration.
+
+```jsx
+<input {...getFieldProps('email')} type="text" placeholder="Email" />;
+{
+	errors.email && (
+		<div>
+			<p>{errors.email}</p>
+		</div>
+	);
+}
+```
+
+## Conclusion
+
+## Conclusion
+
+In conclusion, `react-use-form-validate` empowers React developers to streamline form validation, thereby improving the robustness and usability of their applications. With its easy integration, customizable validation rules, and effortless error handling, this library is a must-have tool for any React project.
+
+Give `react-use-form-validate` a try today and witness the difference in your React forms!
+
+[GitHub Repository](https://github.com/himanshubhardwaz/react-use-form-validate) | [npm Package](https://www.npmjs.com/package/react-use-form-validate)
